@@ -1,0 +1,10 @@
+{
+  "title": "Bird Elephant",
+  "url": "https://birdelephant.com",
+  "logo": {
+    "light": "/logo-light.svg",
+    "dark": "/logo-dark.svg"
+  },
+  "github": "danieldevine/bird-docs",
+  "twitter": "@coderjerk"
+}
