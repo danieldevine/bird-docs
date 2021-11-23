@@ -73,6 +73,7 @@ $params= [
     'max_results' => 20,
     'user.fields' => 'profile_image_url'
 ];
+
 $user->following($params);
 ```
 ###### Auth: OAuth 2.0 Bearer token
@@ -151,7 +152,7 @@ $user->block('GilbertOSull_');
 |------------------|-------|-----------------------------|----------|
 | $target_username | String| The target twitter username | required |
 
-### Unblocks User
+### Unblock User
 Unblocks a given user
 
 ```php

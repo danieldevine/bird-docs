@@ -6,10 +6,17 @@ position: 3
 
 Twitter Lists allows users to customize, organize and prioritize the Tweets they see in their timeline.
 
-### Methods
-
-#### `create()`
+### Create List
 Create a new list on behalf of the authenticated user
+
+```php
+use Coderjerk\BirdElephant\BirdElephant;
+
+$twitter = new BirdElephant($credentials);
+
+$twitter->lists()->create($list_name = 'Cool List', $list_description = 'testing', $private = false);
+```
+
 ###### Auth: OAuth 1.0a User context
 
  | Argument         | Type   | Description                                             |          |
@@ -18,8 +25,13 @@ Create a new list on behalf of the authenticated user
  | $list_description| string | Description of the list                                 | optional |
  | $private         | bool   | If the list is private or not. Defaults to false.       | optional |
 
-#### `update()`
+### Update List
 Update an existing list on behalf of the authenticated user
+
+```php
+$list = $twitter->lists()->update($list_id, $list_name, $list_description, $private);
+```
+
 ###### Auth: OAuth 1.0a User context
 
  | Argument          | Type   | Description                                       |          |
@@ -30,8 +42,13 @@ Update an existing list on behalf of the authenticated user
  | $private          | bool   | If the list is private or not. Defaults to false. | optional |
 
 
-#### `delete()`
-Delete a list n behalf of the authenticated user
+### Delete List
+Delete a list owned by the authenticated user
+
+```php
+$member = $twitter->lists()->delete($list_id);
+```
+
 ###### Auth: OAuth 1.0a User context
 
  | Argument          | Type   | Description                                       |          |
@@ -39,41 +56,34 @@ Delete a list n behalf of the authenticated user
  | $list_id          | string | The id of the list                                | required |
 
 
-#### `members()->add()`
+### Add List Member
 Add a member to a list
+
+```php
+$member = $twitter->lists()->members()->add($list_id, $user_name);
+```
+
 ###### Auth: OAuth 1.0a User context
  | Argument | Type   | Description        |          |
  |----------|--------|--------------------|----------|
  | $list_id | string | The id of the list | required |
  | $user_name     | string | the twitter user name of the list member           | required|
 
-#### `members()->remove()`
+### Remove List Member
 Remove a member from a list
+
+```php
+$dismember = $twitter->lists()->members()->remove($list_id, $user_name);
+```
+
 ###### Auth: OAuth 1.0a User context
  | Argument   | Type   | Description                               |          |
  |------------|--------|-------------------------------------------|----------|
  | $list_id   | string | The id of the list                        | required |
  | $user_name | string | the twitter user name of the list member | required |
 
-### Reference
+## Reference
 - [Twitter API Lists Reference](https://developer.twitter.com/en/docs/twitter-api/lists/manage-lists/api-reference)
 
-### Examples
 
-```php
-use Coderjerk\BirdElephant\BirdElephant;
 
-$twitter = new BirdElephant($credentials);
-
-//create a list
-$list = $twitter->lists()->create($list_name = 'Cool List', $list_description = 'testing', $private = false);
-
-//update a list
-$list = $twitter->lists()->update($list_id, $list_name, $list_description, $private);
-
-//add a member to a list
-$member = $twitter->lists()->members()->add($list_id, $user_name);
-
-//remove a member from a list
-$dismember = $twitter->lists()->members()->remove($list_id, $user_name);
-```
