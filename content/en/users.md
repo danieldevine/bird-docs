@@ -28,9 +28,9 @@ $users = $twitter->users()->lookup($usernames, $params);
 | $usernames  | Array | array of Twitter usernames                     | required |
 | $params     | Array | [available query parameters](https://developer.twitter.com/en/docs/twitter-api/users/lookup/api-reference/get-users-by-username-username) | optional |
 
-# User
 
-### The `user()` Method
+
+### The user Method
 Sets up a Twitter user by user name to be used in conjunction with the methods below to perform actions on behalf of and retrieve data about the named user. The named user must be the authenticated user in instances where user context auth is required.
 
 ```php
