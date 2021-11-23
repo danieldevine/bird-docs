@@ -272,6 +272,31 @@ $user->spaces();
 |----------|-------|------------------------------------------------|----------|
 | $params  | Array | see Twitter docs for avilable query parameters | optional |
 
+### Get Followed Lists
+Gets a list of folllowed lists on behalf of the authenticated user
+
+```php
+$user->lists()->followed($params);
+```
+###### Auth: OAuth 1.0a User context
+
+| Argument | Type  | Description                                    |          |
+|----------|-------|------------------------------------------------|----------|
+| $params  | Array | see Twitter docs for avilable query parameters | required |
+
+### Get Pinned Lists
+Gets a list of pinned lists on behalf of the authenticated user
+
+```php
+$user->lists()->pinned($params);
+```
+###### Auth: OAuth 1.0a User context
+
+| Argument | Type  | Description                                    |          |
+|----------|-------|------------------------------------------------|----------|
+| $params  | Array | see Twitter docs for avilable query parameters | required |
+
+
 ### Follow Lists
 Follows a list on behalf of the authenticated user
 
