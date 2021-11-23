@@ -55,6 +55,18 @@ $member = $twitter->lists()->delete($list_id);
  |-------------------|--------|---------------------------------------------------|----------|
  | $list_id          | string | The id of the list                                | required |
 
+### Get List Members
+Gets the members of a given list
+
+```php
+$twitter->lists()->members()->lookup($list_id, $params);
+```
+###### Auth: OAuth 2.0 Bearer token
+ | Argument   | Type   | Description                                    |          |
+ |------------|--------|------------------------------------------------|----------|
+ | $list_id   | string | The id of the list                             | required |
+ | $params    | Array  | see Twitter docs for avilable query parameters | optional |
+
 
 ### Add List Member
 Add a member to a list
@@ -80,7 +92,7 @@ $dismember = $twitter->lists()->members()->remove($list_id, $user_name);
  | Argument   | Type   | Description                               |          |
  |------------|--------|-------------------------------------------|----------|
  | $list_id   | string | The id of the list                        | required |
- | $user_name | string | the twitter user name of the list member | required |
+ | $user_name | string | the twitter user name of the list member  | required |
 
 ## Reference
 - [Twitter API Lists Reference](https://developer.twitter.com/en/docs/twitter-api/lists/manage-lists/api-reference)

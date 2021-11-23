@@ -282,7 +282,7 @@ $user->lists()->followed($params);
 
 | Argument | Type  | Description                                    |          |
 |----------|-------|------------------------------------------------|----------|
-| $params  | Array | see Twitter docs for avilable query parameters | required |
+| $params  | Array | see Twitter docs for avilable query parameters | optional |
 
 ### Get Pinned Lists
 Gets a list of pinned lists on behalf of the authenticated user
@@ -294,8 +294,19 @@ $user->lists()->pinned($params);
 
 | Argument | Type  | Description                                    |          |
 |----------|-------|------------------------------------------------|----------|
-| $params  | Array | see Twitter docs for avilable query parameters | required |
+| $params  | Array | see Twitter docs for avilable query parameters | optional |
 
+### Get Owned Lists
+Gets lists owned by the authenticated user
+
+```php
+$user->lists()->owned($params);
+```
+###### Auth: OAuth 1.0a User context
+
+| Argument | Type  | Description                                    |          |
+|----------|-------|------------------------------------------------|----------|
+| $params  | Array | see Twitter docs for avilable query parameters | optional |
 
 ### Follow Lists
 Follows a list on behalf of the authenticated user

@@ -11,6 +11,7 @@ Spaces allow expression and interaction via live audio conversation. These endpo
 #### `lookup()->getSpace()`
 Lookup a space by id
 ###### Auth: OAuth 2.0 Bearer token
+
 | Argument  | Type   | Description                                    |          |
 |-----------|--------|------------------------------------------------|----------|
 | $space_id | String | The Space Id                                   | required |
@@ -18,6 +19,7 @@ Lookup a space by id
 
 #### `lookup()->getSpaces()`
 Look up multiple spaces by id
+
 ###### Auth: OAuth 2.0 Bearer token
 | Argument   | Type  | Description                                    |          |
 |------------|-------|------------------------------------------------|----------|
