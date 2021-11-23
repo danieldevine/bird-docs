@@ -1,7 +1,7 @@
 ---
 title: Setup
 description: ''
-position: 2
+position: 5
 category: Guide
 ---
 
