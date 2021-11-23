@@ -1,84 +1,99 @@
 ---
 title: Tweets
 description: ''
-position: 6
+position: 1
 ---
-### The `tweets()` Method
+
 
 ```php
+use Coderjerk/BirdElephant/BirdElephant;
+
 $twitter = new BirdElephant($credentials);
 $tweets = $twitter->tweets();
 ```
 
-#### `tweet()`
-Tweets a tweet object, with media or a poll. Can quote retweet and reply to tweets. See [Manage Tweets](/docs/ManageTweets.md) for full implementation details and examples;
+### Tweet
+Tweets a tweet object, with media or a poll. Can quote retweet and reply to tweets. See [Manage Tweets](/manage-tweets) for full implementation details and examples;
 
 ```php
-$twitter->tweets()->tweet($tweet);
+$tweets()->tweet($tweet);
 ```
 ###### Auth: OAuth 1.0 User Context
 | Name   | Type   | Description                                                 |          |
 |--------|--------|-------------------------------------------------------------|----------|
-| $tweet | object | The Tweet object - see [Manage Tweets](/docs/ManageTweets.md) | required |
+| $tweet | object | The Tweet object - see [Manage Tweets](/manage-tweets) | required |
 
-#### `delete()`
+### Delete Tweet
 Deletes a tweet on behalf of the authenticated user
 
 ```php
 $tweets->delete($tweet_id);
 ```
 ###### Auth: OAuth 1.0 User Context
+
 | Name      | Type   | Description      |          |
 |-----------|--------|------------------|----------|
 | $tweet_id | String | The Tweet id     | required |
----
 
----
-#### `get()`
+### Get Tweet
 Gets a tweet
 
 ```php
-$tweets->get($id, $params);
+$tweets->get($tweet_id, $params);
 ```
 ###### Auth: OAuth 2.0 Bearer token
 | Name    | Type   | Description      |          |
 |---------|--------|------------------|----------|
-| $id     | String | The Tweet id     | required |
+| $tweet_id     | String | The Tweet id     | required |
 | $params | Array  | Query Parameters | optional |
----
-#### `lookup()`
+
+
+### Lookup Tweets
 Gets multiple tweets
+
 ```php
-$tweets->lookup([$id1,$id2], $params);
+$tweet_ids = [$id1,$id2]
+$tweets->lookup($tweet_ids, $params);
 ```
 ###### Auth: OAuth 2.0 Bearer token
-| Name    | Type   | Description      |          |
-|---------|--------|------------------|----------|
-| $ids    | Array | The Tweet ids     | required |
-| $params | Array  | Query Parameters | optional |
----
-#### `count()->recent()`
+
+| Name          | Type   | Description       |          |
+|---------------|--------|-------------------|----------|
+| $tweet_ids    | Array  | The Tweet ids     | required |
+| $params       | Array  | Query Parameters  | optional |
+
+
+### Count Recent Tweets
 Gets  a count of Tweets that match a query in the last 7 days.
+
 ```php
 $tweets->count->recent($params);
 ```
 ###### Auth: OAuth 2.0 Bearer token
+
 | Name    | Type  | Description      |          |
 |---------|-------|------------------|----------|
 | $params | Array | Query Parameters | required |
----
-#### `count()->all()`
+
+
+### Count All Tweets
 Gets a count of Tweets that match a query. Academic track only.
+
 ```php
 $tweets->count->all($params);
 ```
+
 ###### Auth: OAuth 2.0 Bearer token
+
 | Name    | Type  | Description      |          |
 |---------|-------|------------------|----------|
 | $params | Array | Query Parameters | required |
----
-#### `search()->recent()`
+
+
+### Search Recent Tweets
+
 Search Tweets that match a query in the last 7 days.
+
 ```php
 $params = [
     'query' => 'limerick has:images ',
@@ -90,51 +105,65 @@ $params = [
 
 $tweets->search->recent($params);
 ```
+
 ###### Auth: OAuth 2.0 Bearer token
+
 | Name    | Type  | Description      |          |
 |---------|-------|------------------|----------|
 | $params | Array | Query Parameters | required |
----
-#### `search()->all()`
+
+
+### Search All Tweets
 Search Tweets that match a query. Academic track only.
+
 ```php
 $tweets->search->all($params);
 ```
+
 ###### Auth: OAuth 2.0 Bearer token
+
 | Name    | Type  | Description      |          |
 |---------|-------|------------------|----------|
 | $params | Array | Query Parameters | required |
----
-#### `reply()->hide()`
+
+
+### Hide Reply
 Hide a reply to a tweet
+
 ```php
 // note: you can't hide your own replies!!
 $tweets->reply->hide($id);
 ```
 ###### Auth: OAuth 1.0a User context
+
 | Name    | Type   | Description      |          |
 |---------|--------|------------------|----------|
 | $id     | String | The Tweet id     | required |
----
-#### `reply()->unhide()`
+
+
+### Unhide Reply
 unhide a reply to a tweeet
+
 ```php
 $tweets->reply->unhide($id);
 ```
+
 ###### Auth: OAuth 1.0a User context
 | Name | Type   | Description  |          |
 |------|--------|--------------|----------|
 | $id  | String | The Tweet id | required |
----
-#### `likers()`
+
+
+### Tweet Likers
 Get the users who have liked a given tweet
+
 ```php
 $tweets->likers($id, $params);
 ```
+
 ###### Auth: OAuth 2.0 Bearer token
+
 | Name    | Type   | Description      |          |
 |---------|--------|------------------|----------|
 | $id     | String | The Tweet id     | required |
 | $params | Array  | Query Parameters | optional |
-
-
