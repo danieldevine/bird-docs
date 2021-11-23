@@ -2,10 +2,9 @@
 title: Users
 description: ''
 position: 2
-category: ''
 ---
 
-## `lookup()`
+### Lookup Users
 Looks up multiple twitter users by username
 
 ```php
@@ -30,7 +29,7 @@ $users = $twitter->users()->lookup($usernames, $params);
 
 
 
-### The user Method
+### Set User
 Sets up a Twitter user by user name to be used in conjunction with the methods below to perform actions on behalf of and retrieve data about the named user. The named user must be the authenticated user in instances where user context auth is required.
 
 ```php
@@ -44,7 +43,7 @@ $user = $twitter->user($user_name);
 |------------|--------|------------------------------------------------|----------|
 | $user_name | String | Twitter username                               | required |
 
-## `get()`
+### Get User
 Gets information about the named Twitter user.
 
 ```php
@@ -56,7 +55,7 @@ $user->get();
 |------------|--------|------------------------------------------------|----------|
 | $params    | Array  | [available query parameters](https://developer.twitter.com/en/docs/twitter-api/users/lookup/api-reference/get-users-id)                   | optional |
 
-## `followers()`
+### Get Followers
 Gets a Twitter user's followers
 
 ```php
@@ -67,7 +66,7 @@ $user->followers();
 |----------|-------|------------------------------------------------|----------|
 | $params  | Array | [available query parameters](https://developer.twitter.com/en/docs/twitter-api/users/follows/api-reference)                            | optional |
 
-## `following()`
+### Get Following
 Gets a Twitter user's followed accounts
 ```php
 $params= [
@@ -81,7 +80,7 @@ $user->following($params);
 |----------|-------|------------------------------------------------|----------|
 | $params  | Array | [available query parameters](https://developer.twitter.com/en/docs/twitter-api/users/follows/api-reference)                            | optional |
 
-## `follow()`
+### Follow
 Follows a given user
 
 ###### Auth: OAuth 1.0a User context
@@ -93,7 +92,7 @@ $user->follow('coderjerk');
 |------------------|-------|----------------------------------------|----------|
 | $target_username | String| The target twitter username            | required |
 
-## `unfollow()`
+### Unfollow
 Unfollows a given user
 
 ```php
@@ -105,7 +104,7 @@ $user->unfollow('barrymanilow');
 |------------------|-------|-----------------------------|----------|
 | $target_username | String| The target twitter username | required |
 
-## `tweets()`
+### User Tweets
 Gets the tweets of a Twitter user.
 
 ```php
@@ -117,7 +116,7 @@ $user->tweets();
 |----------|-------|------------------------------------------------|----------|
 | $params  | Array | see Twitter docs for avilable query parameters | optional |
 
-## `mentions()`
+### Mentions
 Gets the mentions of a Twitter user.
 
 ```php
@@ -129,7 +128,7 @@ $user->mentions();
 |----------|-------|------------------------------------------------|----------|
 | $params  | Array | see Twitter docs for avilable query parameters | optional |
 
-## `blocks()`
+### User Blocks
 Gets the blocked accounts of a Twitter user.
 
 ```php
@@ -141,8 +140,9 @@ $user->blocks();
 |----------|-------|------------------------------------------------|----------|
 | $params  | Array | see Twitter docs for avilable query parameters | optional |
 
-## `block()`
+### Block User
 Blocks a given user
+
 ```php
 $user->block('GilbertOSull_');
 ```
@@ -151,7 +151,7 @@ $user->block('GilbertOSull_');
 |------------------|-------|-----------------------------|----------|
 | $target_username | String| The target twitter username | required |
 
-## `unblock()`
+### Unblocks User
 Unblocks a given user
 
 ```php
@@ -163,7 +163,7 @@ $user->unblock('claydermanmusic');
 |------------------|-------|-----------------------------|----------|
 | $target_username | String| The target twitter username | required |
 
-## `mutes()`
+### User Mutes
 Gets the muted accounts of a Twitter user.
 
 ```php
@@ -175,7 +175,7 @@ $user->mutes();
 |----------|-------|------------------------------------------------|----------|
 | $params  | Array | see Twitter docs for avilable query parameters | optional |
 
-## `mute()`
+### Mute User
 
 Mutes a given user
 
@@ -188,7 +188,7 @@ $user->mute('kennyg');
 |------------------|-------|-----------------------------|----------|
 | $target_username | String| The target twitter username | required |
 
-## `unmute()`
+### Unmute User
 Unmutes a given user
 
 ```php
@@ -200,7 +200,7 @@ $user->unmute('kennyg');
 |------------------|-------|-----------------------------|----------|
 | $target_username | String| The target twitter username | required |
 
-## `likes()`
+### User Likes
 Gets the named user's last 100 likes
 
 ```php
@@ -212,7 +212,7 @@ $user->likes($params);
 |----------|-------|------------------------------------------------|----------|
 | $params  | Array | see Twitter docs for avilable query parameters | optional |
 
-## `like()`
+### Like Tweet
 Likes a tweet on behalf of the authenticated user
 
 ```php
@@ -224,7 +224,7 @@ $user->like('1456978214837006343');
 |----------|-------|------------------------------------------------|----------|
 | $tweet_id  | String | the target tweet id | reqired |
 
-## `unlike()`
+### Unlike Tweet
 Unlikes a tweet on behalf of the authenticated user
 
 ```php
@@ -236,7 +236,7 @@ $user->unlike($tweet_id);
 |-----------|--------|---------------------|----------|
 | $tweet_id | String | the target tweet id | required |
 
-## `retweet()`
+### Retweet
 Retweets a tweet on behalf of the authenticated user
 
 ```php
@@ -247,7 +247,7 @@ $user->retweet('1456978214837006343');
 |-----------|--------|---------------------|----------|
 | $tweet_id | String | the target tweet id | required |
 
-## `unretweet()`
+### Unretweet
 Unretweets a tweet on behalf of the authenticated user
 
 ```php
@@ -259,7 +259,7 @@ $user->unretweet($tweet_id);
 |-----------|--------|---------------------|----------|
 | $tweet_id | String | the target tweet id | required |
 
-## `spaces()`
+### User Spaces
 Gets a user's spaces
 
 ```php
@@ -271,7 +271,7 @@ $user->spaces();
 |----------|-------|------------------------------------------------|----------|
 | $params  | Array | see Twitter docs for avilable query parameters | optional |
 
-## `lists()->follow()`
+### Follow Lists
 Follows a list on behalf of the authenticated user
 
 ```php
@@ -283,7 +283,7 @@ $user->lists()->follow($target_list_id);
 |------------------|-------|-----------------------------|----------|
 | $target_list_id | String | The target list id          | required |
 
-## `lists()->unfollow()`
+### Unfollow Lists
 Unfollows a list on behalf of the authenticated user
 
 ```php
@@ -295,7 +295,7 @@ $user->lists()->unfollow($target_list_id);
 |-----------------|--------|--------------------|----------|
 | $target_list_id | String | The target list id | required |
 
-## `lists()->pin()`
+### Pin  Lists
 Unpins a list on behalf of the authenticated user
 
 ```php
@@ -307,7 +307,7 @@ $user->lists()->pin($target_list_id);
 |-----------------|--------|--------------------|----------|
 | $target_list_id | String | The target list id | required |
 
-## `lists()->unpin()`
+### Unpin Lists
 Pins a list on behalf of the authenticated user
 
 ```php
@@ -319,7 +319,7 @@ $user->lists()->unpin($target_list_id);
 |-----------------|-------|---------------------|----------|
 | $target_list_id | String | The target list id | required |
 
-### Reference
+## Reference
 Refer to the Twitter documentation for details of paramaters, expansions and fields.
 - [User Lookup](https://developer.twitter.com/en/docs/twitter-api/users/lookup/api-reference)
 - [Follows](https://developer.twitter.com/en/docs/twitter-api/users/follows/api-reference)
