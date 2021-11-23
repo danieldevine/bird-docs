@@ -55,17 +55,6 @@ Of course, in user context auth flows, you will need to pass the authenticated u
 
 Protect your credentials carefully and never commit them to your repository. I'd recommend using a .env file to manage your credentials, you can copy the contents of .env.example to .env in your project and populate with your own credentials if you wish:  [how to use it here](https://github.com/vlucas/phpdotenv)
 
-## Documentation
-
-Documentation and examples for all available Bird Elephant methods here:
-
-- [Users](/docs/Users.md)
-- [Tweets](/docs/Tweets.md)
-- [Manage Tweets](/docs/ManageTweets.md)
-- [Lists](/docs/Lists.md)
-- [Spaces](/docs/Spaces.md)
-- [Compliance](/docs/Compliance.md)
-
 
 ## Quick Examples
 
