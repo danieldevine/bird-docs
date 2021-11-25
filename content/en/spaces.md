@@ -3,13 +3,24 @@ title: Spaces
 description: ''
 position: 5
 ---
+#### Method:  ```spaces()```
 
-Spaces allow expression and interaction via live audio conversation. These endpoints seem to very much be in their infancy at the moment, so expect some changes here as the Twitter API v2 matures.
+Spaces allow expression and interaction via live audio conversation.
 
-### Methods
+**These endpoints seem to very much be in their infancy at the moment, so expect some changes here as the Twitter API v2 matures.**
 
-#### `lookup()->getSpace()`
+```php
+$twitter = new BirdElephant($credentials);
+
+$spaces = $twitter->spaces()->lookup();
+```
+
+### Get a Space
+#### Method: `getSpace()`
 Lookup a space by id
+```php
+$spaces->getspace($space_id, $params);
+```
 ###### Auth: OAuth 2.0 Bearer token
 
 | Argument  | Type   | Description                                    |          |
@@ -17,8 +28,13 @@ Lookup a space by id
 | $space_id | String | The Space Id                                   | required |
 | $params   | Array  | see Twitter docs for avilable query parameters | optional |
 
-#### `lookup()->getSpaces()`
+### Get Multiple Spaces
+
+#### Method: `getSpaces()`
 Look up multiple spaces by id
+```php
+$spaces->getspaces($space_ids, $params);
+```
 
 ###### Auth: OAuth 2.0 Bearer token
 | Argument   | Type  | Description                                    |          |
@@ -26,20 +42,18 @@ Look up multiple spaces by id
 | $space_ids | Array | The Space Ids                                  | required |
 | $params    | Array | see Twitter docs for avilable query parameters | optional |
 
+### Discover Spaces
 
-#### `lookup()->discover()`
+#### Method: `discover()`
 lookup live or scheduled Spaces created by the specified user IDs
+```php
+$spaces->discover($creator_ids, $params);
+```
 ###### Auth: OAuth 2.0 Bearer token
 | Argument  | Type  | Description                                    |          |
 |-----------|-------|------------------------------------------------|----------|
 | $creator_ids | Array | Creator user Ids                                       | required |
 | $params   | Array | See Twitter docs for avilable query parameters | optional |
-
-
-### Reference
-- [Spaces](https://developer.twitter.com/en/docs/twitter-api/spaces/overview)
-- [Twitter API Spaces Lookup Reference](https://developer.twitter.com/en/docs/twitter-api/spaces/lookup/api-reference)
-- [Twitter API Search Spaces Reference](https://developer.twitter.com/en/docs/twitter-api/spaces/search/api-reference/get-spaces-search)
 
 
 ### Examples
@@ -74,3 +88,8 @@ $creator_ids = [
 
 $spaces = $twitter->spaces()->lookup()->discover($creator_ids, $params);
 ```
+
+### Reference
+- [Spaces](https://developer.twitter.com/en/docs/twitter-api/spaces/overview)
+- [Twitter API Spaces Lookup Reference](https://developer.twitter.com/en/docs/twitter-api/spaces/lookup/api-reference)
+- [Twitter API Search Spaces Reference](https://developer.twitter.com/en/docs/twitter-api/spaces/search/api-reference/get-spaces-search)

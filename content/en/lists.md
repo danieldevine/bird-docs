@@ -3,10 +3,21 @@ title: Lists
 description: ''
 position: 3
 ---
+#### Method:  ```lists()```
 
 Twitter Lists allows users to customize, organize and prioritize the Tweets they see in their timeline.
 
+```php
+$twitter = new BirdElephant($credentials);
+
+$lists = $twitter->lists()
+```
+## Manage Lists
+
 ### Get List
+
+#### Method: ```get()```
+
 Gets a Twitter list.
 
 ```php
@@ -20,14 +31,12 @@ $lists->get($list_id, $params);
 | $params  | Array | [available query parameters](https://developer.twitter.com/en/docs/twitter-api/lists/list-lookup/api-reference/get-lists-id) | optional |
 
 ### Create List
+#### Method: ```create()```
+
 Create a new list on behalf of the authenticated user
 
 ```php
-use Coderjerk\BirdElephant\BirdElephant;
-
-$twitter = new BirdElephant($credentials);
-
-$twitter->lists()->create($list_name = 'Cool List', $list_description = 'testing', $private = false);
+$lists->create($list_name = 'Cool List', $list_description = 'testing', $private = false);
 ```
 
 ###### Auth: OAuth 1.0a User context
@@ -39,10 +48,12 @@ $twitter->lists()->create($list_name = 'Cool List', $list_description = 'testing
  | $private         | bool   | If the list is private or not. Defaults to false.       | optional |
 
 ### Update List
+#### Method: ```update()```
+
 Update an existing list on behalf of the authenticated user
 
 ```php
-$list = $twitter->lists()->update($list_id, $list_name, $list_description, $private);
+$lists->update($list_id, $list_name, $list_description, $private);
 ```
 
 ###### Auth: OAuth 1.0a User context
@@ -56,10 +67,12 @@ $list = $twitter->lists()->update($list_id, $list_name, $list_description, $priv
 
 
 ### Delete List
+#### Method: ```delete()```
+
 Delete a list owned by the authenticated user
 
 ```php
-$member = $twitter->lists()->delete($list_id);
+$lists()->delete($list_id);
 ```
 
 ###### Auth: OAuth 1.0a User context
@@ -68,11 +81,19 @@ $member = $twitter->lists()->delete($list_id);
  |-------------------|--------|---------------------------------------------------|----------|
  | $list_id          | string | The id of the list                                | required |
 
+## List Members
+#### Method: ```members()```
+```php
+$members = $lists->members();
+```
+
 ### Get List Members
+#### Method: ```lookup()```
+
 Gets the members of a given list
 
 ```php
-$twitter->lists()->members()->lookup($list_id, $params);
+$members()->lookup($list_id, $params);
 ```
 ###### Auth: OAuth 2.0 Bearer token
  | Argument   | Type   | Description                                    |          |
@@ -82,10 +103,12 @@ $twitter->lists()->members()->lookup($list_id, $params);
 
 
 ### Add List Member
+#### Method: ```add()```
+
 Add a member to a list
 
 ```php
-$member = $twitter->lists()->members()->add($list_id, $user_name);
+$members->add($list_id, $user_name);
 ```
 ###### Auth: OAuth 1.0a User context
  | Argument | Type   | Description        |          |
@@ -94,10 +117,12 @@ $member = $twitter->lists()->members()->add($list_id, $user_name);
  | $user_name     | string | the twitter user name of the list member           | required|
 
 ### Remove List Member
+#### Method: ```remove()```
+
 Remove a member from a list
 
 ```php
-$dismember = $twitter->lists()->members()->remove($list_id, $user_name);
+$members->remove($list_id, $user_name);
 ```
 
 ###### Auth: OAuth 1.0a User context
@@ -106,11 +131,19 @@ $dismember = $twitter->lists()->members()->remove($list_id, $user_name);
  | $list_id   | string | The id of the list                        | required |
  | $user_name | string | the twitter user name of the list member  | required |
 
- ### Get List Follows
+## List Follows
+#### Method: ```follows()```
+```php
+$follows = $lists->follows();
+```
+
+### Get List Follows
+#### Method: ```lookup()```
+
 Gets the followers of a given list
 
 ```php
-$twitter->lists()->follows()->lookup($list_id, $params);
+$follows->lookup($list_id, $params);
 ```
 ###### Auth: OAuth 2.0 Bearer token
  | Argument | Type   | Description                                    |          |
