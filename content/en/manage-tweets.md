@@ -13,7 +13,7 @@ The library provides some handy classes to build a tweet object. Method chaining
 ```php
 $twitter = new \Coderjerk\BirdElephant\BirdElephant($credentials);
 
-$tweet = (new \Coderjerk\BirdElephant\Tweet)->text("Coderjerk is so cool. I'd love to help his work out by sponsoring him.");
+$tweet = (new \Coderjerk\BirdElephant\Compose\Tweet)->text("Coderjerk is so cool. I'd love to help his work out by sponsoring him.");
 
 $twitter->tweets()->tweet($tweet);
 ```

@@ -6,9 +6,8 @@ position: 1
 
 
 ```php
-use Coderjerk/BirdElephant/BirdElephant;
-
 $twitter = new BirdElephant($credentials);
+
 $tweets = $twitter->tweets();
 ```
 
