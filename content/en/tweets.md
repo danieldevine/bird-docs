@@ -6,9 +6,8 @@ position: 1
 
 
 ```php
-use Coderjerk/BirdElephant/BirdElephant;
-
 $twitter = new BirdElephant($credentials);
+
 $tweets = $twitter->tweets();
 ```
 
@@ -16,7 +15,7 @@ $tweets = $twitter->tweets();
 Tweets a tweet object, with media or a poll. Can quote retweet and reply to tweets. See [Manage Tweets](/manage-tweets) for full implementation details and examples;
 
 ```php
-$tweets()->tweet($tweet);
+$tweets->tweet($tweet);
 ```
 ###### Auth: OAuth 1.0 User Context
 | Name   | Type   | Description                                                 |          |
