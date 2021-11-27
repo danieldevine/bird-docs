@@ -1,13 +1,12 @@
 ---
-title: Introduction
+title: Bird Elephant
 description: ''
 position: 0
 category: ''
 ---
-[![v2](https://img.shields.io/endpoint?url=https%3A%2F%2Ftwbadges.glitch.me%2Fbadges%2Fv2)](https://developer.twitter.com/en/docs/twitter-api)
 
-<img src="/logo-dark.svg" class="dark-img" width="300px" alt="Bird Elephant Logo"/>
-<img src="/logo-light.svg" class="light-img" width="300px" alt="Bird Elephant Logo"/>
+[![v2](https://img.shields.io/endpoint?url=https%3A%2F%2Ftwbadges.glitch.me%2Fbadges%2Fv2)](https://developer.twitter.com/en/docs/twitter-api)
+[![Minimum PHP Version](https://img.shields.io/badge/php-%3E%3D%207.4-8892BF.svg)](https://php.net/)
 
 #### Connect to Twitter API v2 Early Access endpoints in PHP.
 
@@ -119,23 +118,7 @@ echo "Next Token: {$followers->meta->next_token}";
 This is an unofficial tool written by me in my spare time and is not affiliated with Twitter.
 
 These endpoints are early access so subject to change. As a consequence elements of this package are almost certain to change too, but I will attempt to avoid breaking changes, and the underlying structure has been built with that in mind. This package does not support Twitter API v1.1.
-<!-- Note that operator support is quite sparse at the moment which makes the use of tweets and media more than a little risky in some contexts - for example filtering NSFW content is not yet possible. I don't know if this is in Twitter's plans or not. -->
 
-## Contributing
-
-Fork/download the code and run
-
-`composer install`
-
-copy `.env.example` to `.env` and add your credentials for testing.
-
-To run tests
-
-`./vendor/bin/phpunit`
-
-Issues, pull requests and other contributions most welcome. Please use the issue template provided.
-
-You can [look at the project board for upcoming features](https://github.com/danieldevine/bird-elephant/projects/1) if you want to pitch in :)
 
 
 <app-color-switcher></app-color-switcher>
