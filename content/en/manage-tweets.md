@@ -47,15 +47,23 @@ $twitter->tweets()->tweet($tweet);
 The Twitter API v2 doesn't yet support media uploads, so for the time being we are using the v1.1 media upload endpoint to upload an image and attach it to a tweet. We will match that functionality as it comes online in Twitter API v2
 
 ```php
+$twitter = new \Coderjerk\BirdElephant\BirdElephant($credentials);
+
 // first, use the tweeets()->upload method to upload your image file
-$image = $twitter->tweets()->upload('./img/chris_de_burgh.png');
+$image = $twitter->tweets()->upload('./img/chris.png');
 
-//pass the returned media id to a media object as an array
-$media = (new \Coderjerk\BirdElephant\Compose\Media)->mediaIds([$image->media_id_string]);
+// //pass the returned media id to a media object as an array
+$media = (new \Coderjerk\BirdElephant\Compose\Media)->mediaIds(
+    [
+        $image->media_id_string
+    ]
+);
 
-//compose the tweet and pass alog the media object
+// //compose the tweet and pass along the media object
 $tweet = (new \Coderjerk\BirdElephant\Compose\Tweet)->text('Thanks @coderjerk')
     ->media($media);
+
+$twitter->tweets()->tweet($tweet);
 ```
 
 #### Reply to a tweet
@@ -63,7 +71,7 @@ $tweet = (new \Coderjerk\BirdElephant\Compose\Tweet)->text('Thanks @coderjerk')
 //build a reply object with the id of the tweet to reply to
 $reply = (new \Coderjerk\BirdElephant\Compose\Reply)->inReplyToTweetId('1456978214837006343');
 
-$tweet = (new \Coderjerk\BirdElephant\Compose\Tweet)->text('Agreed, Bird Elephant is the best twitter API v2 php library going.')
+$tweet = (new \Coderjerk\BirdElephant\Compose\Tweet)->text('Agreed, Bird Elephant is the best twitter API v2 php library.')
     ->reply($reply);
 ```
 

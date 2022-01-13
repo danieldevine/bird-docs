@@ -99,7 +99,7 @@ $params = [
     'tweet.fields' => 'attachments,author_id,created_at',
     'expansions'   => 'attachments.media_keys',
     'media.fields' => 'public_metrics,type,url,width',
-    'max_results'  => 5,
+    'max_results'  => 10,
 ];
 
 $tweets->search->recent($params);
