@@ -1,5 +1,5 @@
 # bird-docs
-Documentation for [Bird Elephant]('https://birdelephant.com').
+Documentation for [Bird Elephant](https://birdelephant.com).
 
 
 ## Setup
