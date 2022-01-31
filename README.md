@@ -1,5 +1,5 @@
 # bird-docs
-Documentation for [Bird Elephant]('https://github.com/danieldevine/bird-elephant).
+Documentation for [Bird Elephant]('https://birdelephant.com').
 
 
 ## Setup
