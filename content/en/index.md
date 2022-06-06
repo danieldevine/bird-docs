@@ -59,7 +59,8 @@ The package provides a number of different ways of interacting with the Twitter 
 
 
 ```php
-use Coderjerk/BirdElephant/BirdElephant;
+require __DIR__.'/vendor/autoload.php';
+use Coderjerk\BirdElephant\BirdElephant;
 
 //your credentials, should be passed in via $_ENV or similar, don't hardcode.
 $credentials = array(
