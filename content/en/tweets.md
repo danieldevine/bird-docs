@@ -66,7 +66,11 @@ $tweets->lookup($tweet_ids, $params);
 Gets  a count of Tweets that match a query in the last 7 days.
 
 ```php
-$tweets->count->recent($params);
+$params = [
+    'query' => 'Schlager',
+];
+
+$tweets->count()->recent($params);
 ```
 ###### Auth: OAuth 2.0 Bearer token
 
@@ -79,7 +83,11 @@ $tweets->count->recent($params);
 Gets a count of Tweets that match a query. Academic track only.
 
 ```php
-$tweets->count->all($params);
+$params = [
+    'query' => 'Dieter Thomas Heck',
+];
+
+$tweets->count()->all($params);
 ```
 
 ###### Auth: OAuth 2.0 Bearer token
@@ -102,7 +110,7 @@ $params = [
     'max_results'  => 10,
 ];
 
-$tweets->search->recent($params);
+$tweets->search()->recent($params);
 ```
 
 ###### Auth: OAuth 2.0 Bearer token
@@ -116,7 +124,11 @@ $tweets->search->recent($params);
 Search Tweets that match a query. Academic track only.
 
 ```php
-$tweets->search->all($params);
+$params = [
+    'query' => 'Schlager has:images',
+];
+
+$tweets->search()->all($params);
 ```
 
 ###### Auth: OAuth 2.0 Bearer token
@@ -131,7 +143,7 @@ Hide a reply to a tweet
 
 ```php
 // note: you can't hide your own replies!!
-$tweets->reply->hide($id);
+$tweets->reply()->hide($id);
 ```
 ###### Auth: OAuth 1.0a User context
 
@@ -144,7 +156,7 @@ $tweets->reply->hide($id);
 unhide a reply to a tweeet
 
 ```php
-$tweets->reply->unhide($id);
+$tweets->reply()->unhide($id);
 ```
 
 ###### Auth: OAuth 1.0a User context

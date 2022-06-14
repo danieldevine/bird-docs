@@ -116,7 +116,7 @@ $user->follow('coderjerk');
 Unfollows a given user
 
 ```php
-$user->unfollow('barrymanilow');
+$user->unfollow('stefanmross');
 ```
 ###### Auth: OAuth 1.0a User context
 
