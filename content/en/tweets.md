@@ -169,12 +169,27 @@ $tweets->reply()->unhide($id);
 Get the users who have liked a given tweet
 
 ```php
-$tweets->likers($id, $params);
+$tweets->likers($tweet_id, $params);
 ```
 
 ###### Auth: OAuth 2.0 Bearer token
 
 | Name    | Type   | Description      |          |
 |---------|--------|------------------|----------|
-| $id     | String | The Tweet id     | required |
+| $tweet_id     | String | The Tweet id     | required |
+| $params | Array  | Query Parameters | optional |
+
+
+### Tweet Retweeters
+Get the users who have liked a given tweet
+
+```php
+$tweets->retweeters($tweet_id, $params);
+```
+
+###### Auth: OAuth 2.0 Bearer token
+
+| Name    | Type   | Description      |          |
+|---------|--------|------------------|----------|
+| $tweet_id     | String | The Tweet id     | required |
 | $params | Array  | Query Parameters | optional |
