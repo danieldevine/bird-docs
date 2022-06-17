@@ -124,6 +124,22 @@ $user->unfollow('stefanmross');
 |------------------|-------|-----------------------------|----------|
 | $target_username | String| The target twitter username | required |
 
+### Timeline
+#### Method: ```timeline()```
+
+Gets the authenticated user's timeline in reverse chronological order.
+
+```php
+$username = $twitter->me()->myself()->data->username;
+
+$timeline = $twitter->user($username)->timeline();
+```
+###### Auth: OAuth 1.0a User context
+
+| Argument | Type  | Description                                    |          |
+|----------|-------|------------------------------------------------|----------|
+| $params  | Array | [see Twitter docs for avilable query parameters](https://developer.twitter.com/en/docs/twitter-api/tweets/timelines/api-reference/get-users-id-reverse-chronological) | optional |
+
 ### User Tweets
 #### Method: ```tweets()```
 
