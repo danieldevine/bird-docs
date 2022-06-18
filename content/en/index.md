@@ -5,8 +5,11 @@ position: 0
 category: ''
 ---
 
+<div class="button-grid" style="display:grid, grid-template-columns: 1fr 1fr 1fr 1fr">
 
-[![v2](https://img.shields.io/endpoint?url=https%3A%2F%2Ftwbadges.glitch.me%2Fbadges%2Fv2)](https://developer.twitter.com/en/docs/twitter-api) | [![Minimum PHP Version](https://img.shields.io/badge/php-%3E%3D%207.4-8892BF.svg)](https://php.net/) | [![github](https://img.shields.io/github/stars/danieldevine/bird-elephant?style=social)]('https://github.com/danieldevine/bird-elephant') | [![twitter](https://img.shields.io/twitter/follow/coderjerk?style=social)](https://twitter.com/coderjerk)
+[![v2](https://img.shields.io/endpoint?url=https%3A%2F%2Ftwbadges.glitch.me%2Fbadges%2Fv2)](https://developer.twitter.com/en/docs/twitter-api)  [![Minimum PHP Version](https://img.shields.io/badge/php-%3E%3D%207.4-8892BF.svg)](https://php.net/)  [![github](https://img.shields.io/github/stars/danieldevine/bird-elephant?style=social)]('https://github.com/danieldevine/bird-elephant')  [![twitter](https://img.shields.io/twitter/follow/coderjerk?style=social)](https://twitter.com/coderjerk)
+
+</div>
 
 
 
@@ -120,7 +123,6 @@ echo "Next Token: {$followers->meta->next_token}";
 
 This is an unofficial tool written by me in my spare time and is not affiliated with Twitter.
 
-These endpoints are early access so subject to change. As a consequence elements of this package are almost certain to change too, but I will attempt to avoid breaking changes, and the underlying structure has been built with that in mind. This package does not support Twitter API v1.1.
-
+This package does not support Twitter API v1.1.
 
 <app-color-switcher></app-color-switcher>
