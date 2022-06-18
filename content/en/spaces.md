@@ -7,8 +7,6 @@ position: 5
 
 Spaces allow expression and interaction via live audio conversation.
 
-**These endpoints seem to very much be in their infancy at the moment, so expect some changes here as the Twitter API v2 matures.**
-
 ```php
 $twitter = new BirdElephant($credentials);
 
@@ -21,8 +19,6 @@ Lookup a space by id
 ```php
 $spaces->getspace($space_id, $params);
 ```
-###### Auth: OAuth 2.0 Bearer token
-
 | Argument  | Type   | Description                                    |          |
 |-----------|--------|------------------------------------------------|----------|
 | $space_id | String | The Space Id                                   | required |
@@ -35,8 +31,6 @@ Look up multiple spaces by id
 ```php
 $spaces->getspaces($space_ids, $params);
 ```
-
-###### Auth: OAuth 2.0 Bearer token
 | Argument   | Type  | Description                                    |          |
 |------------|-------|------------------------------------------------|----------|
 | $space_ids | Array | The Space Ids                                  | required |
@@ -49,11 +43,26 @@ lookup live or scheduled Spaces created by the specified user IDs
 ```php
 $spaces->discover($creator_ids, $params);
 ```
-###### Auth: OAuth 2.0 Bearer token
 | Argument  | Type  | Description                                    |          |
 |-----------|-------|------------------------------------------------|----------|
 | $creator_ids | Array | Creator user Ids                                       | required |
 | $params   | Array | See Twitter docs for avilable query parameters | optional |
+
+### View Buyers
+
+#### Method: `buyers()`
+
+Returns a list of user who purchased a ticket to the
+requested Space. You must authenticate the request using
+the Access Token of the creator of the requested Space.
+
+```php
+$spaces->buyers($space_id, $params);
+```
+| Argument  | Type   | Description                                    |          |
+|-----------|--------|------------------------------------------------|----------|
+| $space_id | String | The Space Id                                   | required |
+| $params   | Array  | see Twitter docs for avilable query parameters | optional |
 
 
 ### Examples
