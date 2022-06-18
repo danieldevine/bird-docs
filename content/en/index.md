@@ -1,11 +1,11 @@
 ---
 title: Bird Elephant
-description: ''
+description: 'Connect to Twitter API v2 endpoints in PHP'
 position: 0
 category: ''
 ---
 
-<div class="button-grid" style="display:grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap:1rem">
+<div class="button-grid" style="display:flex; align-items:center; gap:1rem">
 
 [![v2](https://img.shields.io/endpoint?url=https%3A%2F%2Ftwbadges.glitch.me%2Fbadges%2Fv2)](https://developer.twitter.com/en/docs/twitter-api)
 
@@ -18,7 +18,7 @@ category: ''
 </div>
 
 
-#### Connect to Twitter API v2 endpoints in PHP.
+### Connect to Twitter API v2 endpoints in PHP.
 
 This package provides a number of useful ways to interact with the Twitter Rest API v2 endpoints in PHP. It provides a clean and easy to understand set of methods and classes to send tweets, manage users, lookup data, and everything else that the Twitter API v2 provides, from within your app or site.
 
