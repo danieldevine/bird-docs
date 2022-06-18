@@ -5,9 +5,12 @@ position: 0
 category: ''
 ---
 
-[![v2](https://img.shields.io/endpoint?url=https%3A%2F%2Ftwbadges.glitch.me%2Fbadges%2Fv2)](https://developer.twitter.com/en/docs/twitter-api) [![Minimum PHP Version](https://img.shields.io/badge/php-%3E%3D%207.4-8892BF.svg)](https://php.net/) [![github](https://img.shields.io/github/stars/danieldevine/bird-elephant?style=social)]('https://github.com/danieldevine/bird-elephant') [![twitter](https://img.shields.io/twitter/follow/coderjerk?style=social)](https://twitter.com/coderjerk)
 
-#### Connect to Twitter API v2 Early Access endpoints in PHP.
+[![v2](https://img.shields.io/endpoint?url=https%3A%2F%2Ftwbadges.glitch.me%2Fbadges%2Fv2)](https://developer.twitter.com/en/docs/twitter-api) | [![Minimum PHP Version](https://img.shields.io/badge/php-%3E%3D%207.4-8892BF.svg)](https://php.net/) | [![github](https://img.shields.io/github/stars/danieldevine/bird-elephant?style=social)]('https://github.com/danieldevine/bird-elephant') | [![twitter](https://img.shields.io/twitter/follow/coderjerk?style=social)](https://twitter.com/coderjerk)
+
+
+
+#### Connect to Twitter API v2 endpoints in PHP.
 
 This package provides a number of useful ways to interact with the Twitter Rest API v2 endpoints in PHP. It provides a clean and easy to understand set of methods and classes to send tweets, manage users, lookup data, and everything else that the Twitter API v2 provides, from within your app or site.
 
