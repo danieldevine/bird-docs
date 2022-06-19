@@ -5,18 +5,6 @@ position: 0
 category: ''
 ---
 
-<div class="button-grid" style="display:flex; align-items:center; gap:1rem">
-
-[![v2](https://img.shields.io/endpoint?url=https%3A%2F%2Ftwbadges.glitch.me%2Fbadges%2Fv2)](https://developer.twitter.com/en/docs/twitter-api)
-
-[![Minimum PHP Version](https://img.shields.io/badge/php-%3E%3D%207.4-8892BF.svg)](https://php.net/)
-
-[![github](https://img.shields.io/github/stars/danieldevine/bird-elephant?style=social)]('https://github.com/danieldevine/bird-elephant')
-
-[![twitter](https://img.shields.io/twitter/follow/coderjerk?style=social)](https://twitter.com/coderjerk)
-
-</div>
-
 ## Introduction
 #### Connect to Twitter API v2 endpoints in PHP.
 This package provides a number of useful ways to interact with the Twitter Rest API v2 endpoints in PHP. It provides a clean and easy to understand set of methods and classes to send tweets, manage users, lookup data, and everything else that the Twitter API v2 provides, from within your app or site.
@@ -75,7 +63,7 @@ OAuth 1.0a is supported, but it would be wise for new apps to prefer OAuth 2.0 w
 
 If for some reason you pass both OAuth 1.0a and OAuth 2.0 with PKCE tokens, Bird Elephant will prefer 2.0 and try to use that token alone.
 
-You can look at [index.php](/index.php) and [authenticate.php](/authenticate.php) for an example of how a simple auth 2.0 with PKCE flow might work in practice. Use a dedicated oAuth library for this - in the example I use [https://github.com/smolblog/oauth2-twitter](smolblog/oauth2-twitter).
+You can look at [index.php](https://github.com/danieldevine/bird-elephant/blob/main/index.php) and [authenticate.php](https://github.com/danieldevine/bird-elephant/blob/main/authenticate.php) for an example of how a (very) simple auth 2.0 with PKCE flow might work in practice. Use a dedicated oAuth library for this - in the example I use [https://github.com/smolblog/oauth2-twitter](smolblog/oauth2-twitter).
 
 Remember to include the scopes you need when using oAuth 2.0 with PKCE - full list here:
 
@@ -116,9 +104,10 @@ $following = $twitter->user('coderjerk')->following([
     'user.fields' => 'profile_image_url'
 ]);
 
-// You can also use the sub classes / methods directly if you like:
-$user = new UserLookup($credentials);
-$user = $user->getSingleUserByID('2244994945', null);
+//tweet something
+$tweet = (new \Coderjerk\BirdElephant\Compose\Tweet)->text(".@coderjerk is so cool");
+
+$twitter->tweets()->tweet($tweet);
 
 ```
 
@@ -128,9 +117,14 @@ $user = $user->getSingleUserByID('2244994945', null);
 
 ## Notes
 
-This is an unofficial tool written by me in my spare time and is not affiliated with Twitter.
+This is an unofficial tool written by [me](https://github.com/danieldevine) in my spare time and is not affiliated with Twitter.
 
-This package does not support Twitter API v1.1.
+This package does not support Twitter API v1.1, with the exception of media uploads.
+
+## Sponsor
+If you or your company find this lobrary useful show your love by throwing me a few euros and I'll give you a shout out on this site and on the repo README.
+
+[Sponsor development](https://github.com/sponsors/danieldevine)
 
 ## Contributing
 
@@ -147,5 +141,17 @@ To run tests
 Issues, pull requests and other contributions most welcome. Please use the issue template provided.
 
 You can [look at the project board for upcoming features](https://github.com/danieldevine/bird-elephant/projects/1) if you want to pitch in :)
+
+<div class="button-grid" style="display:flex; align-items:center; gap:1rem">
+
+[![v2](https://img.shields.io/endpoint?url=https%3A%2F%2Ftwbadges.glitch.me%2Fbadges%2Fv2)](https://developer.twitter.com/en/docs/twitter-api)
+
+[![Minimum PHP Version](https://img.shields.io/badge/php-%3E%3D%207.4-8892BF.svg)](https://php.net/)
+
+[![github](https://img.shields.io/github/stars/danieldevine/bird-elephant?style=social)]('https://github.com/danieldevine/bird-elephant')
+
+[![twitter](https://img.shields.io/twitter/follow/coderjerk?style=social)](https://twitter.com/coderjerk)
+
+</div>
 
 <app-color-switcher></app-color-switcher>

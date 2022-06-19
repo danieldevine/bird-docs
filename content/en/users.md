@@ -35,6 +35,32 @@ $users->lookup($usernames, $params);
 | $usernames  | Array | array of Twitter usernames                     | required |
 | $params     | Array | [available query parameters](https://developer.twitter.com/en/docs/twitter-api/users/lookup/api-reference/get-users-by-username-username) | optional |
 
+## Me
+#### Method: ```me()```
+Get the authenticated user
+
+```php
+$twitter = new BirdElephant($credentials);
+
+$me = $twitter->me()
+```
+#### Method: ```myself()```
+
+Gets information about the authenticated user.
+
+```php
+
+$params = [
+    'expansions' => 'pinned_tweet_id',
+];
+
+$me->myself($params);
+```
+###### Auth: OAuth 1.0a User context
+| Argument | Type  | Description                                                                                                             |          |
+|----------|-------|-------------------------------------------------------------------------------------------------------------------------|----------|
+| $params  | Array | [available query parameters](https://developer.twitter.com/en/docs/twitter-api/users/lookup/api-reference/get-users-me) | optional |
+
 
 
 ## Twitter User
@@ -428,33 +454,6 @@ $user_lists->unpin($target_list_id);
 | Argument        | Type  | Description         |          |
 |-----------------|-------|---------------------|----------|
 | $target_list_id | String | The target list id | required |
-
-
-## Me
-#### Method: ```me()```
-Get the authenticated user
-
-```php
-$twitter = new BirdElephant($credentials);
-
-$me = $twitter->me()
-```
-#### Method: ```myself()```
-
-Gets information about the authenticated user.
-
-```php
-
-$params = [
-    'expansions' => 'pinned_tweet_id',
-];
-
-$me->myself($params);
-```
-###### Auth: OAuth 1.0a User context
-| Argument | Type  | Description                                                                                                             |          |
-|----------|-------|-------------------------------------------------------------------------------------------------------------------------|----------|
-| $params  | Array | [available query parameters](https://developer.twitter.com/en/docs/twitter-api/users/lookup/api-reference/get-users-me) | optional |
 
 
 
