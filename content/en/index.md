@@ -63,7 +63,7 @@ OAuth 1.0a is supported, but it would be wise for new apps to prefer OAuth 2.0 w
 
 If for some reason you pass both OAuth 1.0a and OAuth 2.0 with PKCE tokens, Bird Elephant will prefer 2.0 and try to use that token alone.
 
-You can look at [index.php](https://github.com/danieldevine/bird-elephant/blob/main/index.php) and [authenticate.php](https://github.com/danieldevine/bird-elephant/blob/main/authenticate.php) for an example of how a (very) simple auth 2.0 with PKCE flow might work in practice. Use a dedicated oAuth library for this - in the example I use [https://github.com/smolblog/oauth2-twitter](smolblog/oauth2-twitter).
+You can look at [index.php](https://github.com/danieldevine/bird-elephant/blob/main/index.php) and [authenticate.php](https://github.com/danieldevine/bird-elephant/blob/main/authenticate.php) for an example of how a (very) simple auth 2.0 with PKCE flow might work in practice. Use a dedicated oAuth library for this - in the example I use [smolblog/oauth2-twitter](https://github.com/smolblog/oauth2-twitter).
 
 Remember to include the scopes you need when using oAuth 2.0 with PKCE - full list here:
 
