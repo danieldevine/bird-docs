@@ -128,7 +128,7 @@ This package does not support Twitter API v1.1, with the exception of media uplo
 Thanks to [Hype Machine](https://hypem.com/) for sponsoring the project.
 
 ## Sponsor
-If you or your company find this lobrary useful show your love by throwing me a few euros and I'll give you a shout out on this site and on the repo README.
+If you or your company find this library useful show your love by throwing me a few euros and I'll give you a shout out on this site and on the repo README.
 
 [Sponsor development](https://github.com/sponsors/danieldevine)
 
