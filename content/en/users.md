@@ -1,7 +1,7 @@
 ---
 title: Users
 description: ''
-position: 2
+position: 3
 ---
 Returns information about a user or group of users
 
@@ -29,7 +29,6 @@ $params = [
 
 $users->lookup($usernames, $params);
 ```
-###### Auth: OAuth 2.0 Bearer token
 | Argument    | Type  | Description                                    |          |
 |-------------|-------|------------------------------------------------|----------|
 | $usernames  | Array | array of Twitter usernames                     | required |
@@ -56,7 +55,6 @@ $params = [
 
 $me->myself($params);
 ```
-###### Auth: OAuth 1.0a User context
 | Argument | Type  | Description                                                                                                             |          |
 |----------|-------|-------------------------------------------------------------------------------------------------------------------------|----------|
 | $params  | Array | [available query parameters](https://developer.twitter.com/en/docs/twitter-api/users/lookup/api-reference/get-users-me) | optional |
@@ -73,7 +71,6 @@ $twitter = new BirdElephant($credentials);
 
 $user = $twitter->user($user_name);
 ```
-###### Auth: OAuth 2.0 Bearer token
 | Argument   | Type   | Description                                    |          |
 |------------|--------|------------------------------------------------|----------|
 | $user_name | String | Twitter username                               | required |
@@ -86,7 +83,6 @@ Gets information about the named Twitter user.
 ```php
 $user->get();
 ```
-###### Auth: OAuth 2.0 Bearer token
 
 | Argument   | Type   | Description                                    |          |
 |------------|--------|------------------------------------------------|----------|
@@ -100,7 +96,6 @@ Gets a Twitter user's followers
 ```php
 $user->followers();
 ```
-###### Auth: OAuth 2.0 Bearer token
 | Argument | Type  | Description                                    |          |
 |----------|-------|------------------------------------------------|----------|
 | $params  | Array | [available query parameters](https://developer.twitter.com/en/docs/twitter-api/users/follows/api-reference)                            | optional |
@@ -117,7 +112,6 @@ $params= [
 
 $user->following($params);
 ```
-###### Auth: OAuth 2.0 Bearer token
 | Argument | Type  | Description                                    |          |
 |----------|-------|------------------------------------------------|----------|
 | $params  | Array | [available query parameters](https://developer.twitter.com/en/docs/twitter-api/users/follows/api-reference)                            | optional |
@@ -130,7 +124,6 @@ Follows a given user
 ```php
 $user->follow('coderjerk');
 ```
-###### Auth: OAuth 1.0a User context
 
 | Argument         | Type  | Description                            |          |
 |------------------|-------|----------------------------------------|----------|
@@ -144,7 +137,6 @@ Unfollows a given user
 ```php
 $user->unfollow('stefanmross');
 ```
-###### Auth: OAuth 1.0a User context
 
 | Argument         | Type  | Description                 |          |
 |------------------|-------|-----------------------------|----------|
@@ -160,7 +152,6 @@ $username = $twitter->me()->myself()->data->username;
 
 $timeline = $twitter->user($username)->timeline();
 ```
-###### Auth: OAuth 1.0a User context
 
 | Argument | Type  | Description                                    |          |
 |----------|-------|------------------------------------------------|----------|
@@ -174,7 +165,6 @@ Gets the tweets of a Twitter user.
 ```php
 $user->tweets();
 ```
-###### Auth: OAuth 2.0 Bearer token
 
 | Argument | Type  | Description                                    |          |
 |----------|-------|------------------------------------------------|----------|
@@ -188,7 +178,6 @@ Gets the mentions of a Twitter user.
 ```php
 $user->mentions();
 ```
-###### Auth: OAuth 2.0 Bearer token
 
 | Argument | Type  | Description                                    |          |
 |----------|-------|------------------------------------------------|----------|
@@ -202,7 +191,6 @@ Gets the blocked accounts of a Twitter user.
 ```php
 $user->blocks();
 ```
-###### Auth: OAuth 1.0a User context
 
 | Argument | Type  | Description                                    |          |
 |----------|-------|------------------------------------------------|----------|
@@ -216,7 +204,6 @@ Blocks a given user
 ```php
 $user->block('GilbertOSull_');
 ```
-###### Auth: OAuth 1.0a User context
 | Argument         | Type  | Description                 |          |
 |------------------|-------|-----------------------------|----------|
 | $target_username | String| The target twitter username | required |
@@ -229,7 +216,6 @@ Unblocks a given user
 ```php
 $user->unblock('claydermanmusic');
 ```
-###### Auth: OAuth 1.0a User context
 
 | Argument         | Type  | Description                 |          |
 |------------------|-------|-----------------------------|----------|
@@ -243,7 +229,6 @@ Gets the muted accounts of a Twitter user.
 ```php
 $user->mutes();
 ```
-###### Auth: OAuth 1.0a User context
 
 | Argument | Type  | Description                                    |          |
 |----------|-------|------------------------------------------------|----------|
@@ -257,7 +242,6 @@ Mutes a given user
 ```php
 $user->mute('kennyg');
 ```
-###### Auth: OAuth 1.0a User context
 
 | Argument         | Type  | Description                 |          |
 |------------------|-------|-----------------------------|----------|
@@ -271,7 +255,6 @@ Unmutes a given user
 ```php
 $user->unmute('kennyg');
 ```
-###### Auth: OAuth 1.0a User context
 
 | Argument         | Type  | Description                 |          |
 |------------------|-------|-----------------------------|----------|
@@ -285,7 +268,6 @@ Gets the named user's last 100 likes
 ```php
 $user->likes($params);
 ```
-###### Auth: OAuth 1.0a User context
 
 | Argument | Type  | Description                                    |          |
 |----------|-------|------------------------------------------------|----------|
@@ -299,7 +281,6 @@ Likes a tweet on behalf of the authenticated user
 ```php
 $user->like('1456978214837006343');
 ```
-###### Auth: OAuth 1.0a User context
 
 | Argument | Type  | Description                                    |          |
 |----------|-------|------------------------------------------------|----------|
@@ -313,7 +294,6 @@ Unlikes a tweet on behalf of the authenticated user
 ```php
 $user->unlike($tweet_id);
 ```
-###### Auth: OAuth 1.0a User context
 
 | Argument  | Type   | Description         |          |
 |-----------|--------|---------------------|----------|
@@ -327,7 +307,6 @@ Retweets a tweet on behalf of the authenticated user
 ```php
 $user->retweet('1456978214837006343');
 ```
-###### Auth: OAuth 1.0a User context
 | Argument  | Type   | Description         |          |
 |-----------|--------|---------------------|----------|
 | $tweet_id | String | the target tweet id | required |
@@ -340,7 +319,6 @@ Unretweets a tweet on behalf of the authenticated user
 ```php
 $user->unretweet($tweet_id);
 ```
-###### Auth: OAuth 1.0a User context
 
 | Argument  | Type   | Description         |          |
 |-----------|--------|---------------------|----------|
@@ -354,7 +332,6 @@ Gets a user's spaces
 ```php
 $user->spaces();
 ```
-###### Auth: OAuth 2.0 Bearer token
 
 | Argument | Type  | Description                                    |          |
 |----------|-------|------------------------------------------------|----------|
@@ -377,7 +354,6 @@ Gets a list of folllowed lists on behalf of the authenticated user
 ```php
 $user_lists->followed($params);
 ```
-###### Auth: OAuth 1.0a User context
 
 | Argument | Type  | Description                                    |          |
 |----------|-------|------------------------------------------------|----------|
@@ -389,7 +365,6 @@ Gets a list of pinned lists on behalf of the authenticated user
 ```php
 $user_lists->pinned($params);
 ```
-###### Auth: OAuth 1.0a User context
 
 | Argument | Type  | Description                                    |          |
 |----------|-------|------------------------------------------------|----------|
@@ -401,7 +376,6 @@ Gets lists owned by the authenticated user
 ```php
 $user_lists->owned($params);
 ```
-###### Auth: OAuth 1.0a User context
 
 | Argument | Type  | Description                                    |          |
 |----------|-------|------------------------------------------------|----------|
@@ -413,7 +387,6 @@ Follows a list on behalf of the authenticated user
 ```php
 $user_lists->follow($target_list_id);
 ```
-###### Auth: OAuth 1.0a User context
 
 | Argument         | Type  | Description                 |          |
 |------------------|-------|-----------------------------|----------|
@@ -425,7 +398,6 @@ Unfollows a list on behalf of the authenticated user
 ```php
 $user_lists->unfollow($target_list_id);
 ```
-###### Auth: OAuth 1.0a User context
 
 | Argument        | Type   | Description        |          |
 |-----------------|--------|--------------------|----------|
@@ -437,7 +409,6 @@ Unpins a list on behalf of the authenticated user
 ```php
 $user_lists->pin($target_list_id);
 ```
-###### Auth: OAuth 1.0a User context
 
 | Argument        | Type   | Description        |          |
 |-----------------|--------|--------------------|----------|
@@ -449,7 +420,6 @@ Pins a list on behalf of the authenticated user
 ```php
 $user_lists->unpin($target_list_id);
 ```
-###### Auth: OAuth 1.0a User context
 
 | Argument        | Type  | Description         |          |
 |-----------------|-------|---------------------|----------|

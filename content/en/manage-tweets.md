@@ -1,7 +1,7 @@
 ---
-title: Manage Tweets
+title: Compose Tweets
 description: ''
-position: 4
+position: 2
 ---
 
 How to build and send a tweet
@@ -74,4 +74,3 @@ $reply = (new \Coderjerk\BirdElephant\Compose\Reply)->inReplyToTweetId('14569782
 $tweet = (new \Coderjerk\BirdElephant\Compose\Tweet)->text('Agreed, Bird Elephant is the best twitter API v2 php library.')
     ->reply($reply);
 ```
-

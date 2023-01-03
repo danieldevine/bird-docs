@@ -12,12 +12,11 @@ $tweets = $twitter->tweets();
 ```
 
 ### Tweet
-Tweets a tweet object, with media or a poll. Can quote retweet and reply to tweets. See [Manage Tweets](/manage-tweets) for full implementation details and examples;
+Tweets a tweet object, with media or a poll. Can quote retweet and reply to tweets. See [Compose Tweets](/manage-tweets) for full implementation details and examples;
 
 ```php
 $tweets->tweet($tweet);
 ```
-###### Auth: OAuth 1.0 User Context
 | Name   | Type   | Description                                                 |          |
 |--------|--------|-------------------------------------------------------------|----------|
 | $tweet | object | The Tweet object - see [Manage Tweets](/manage-tweets) | required |
@@ -28,7 +27,6 @@ Deletes a tweet on behalf of the authenticated user
 ```php
 $tweets->delete($tweet_id);
 ```
-###### Auth: OAuth 1.0 User Context
 
 | Name      | Type   | Description      |          |
 |-----------|--------|------------------|----------|
@@ -40,7 +38,6 @@ Gets a tweet
 ```php
 $tweets->get($tweet_id, $params);
 ```
-###### Auth: OAuth 2.0 Bearer token
 | Name    | Type   | Description      |          |
 |---------|--------|------------------|----------|
 | $tweet_id     | String | The Tweet id     | required |
@@ -54,7 +51,6 @@ Gets multiple tweets
 $tweet_ids = [$id1,$id2]
 $tweets->lookup($tweet_ids, $params);
 ```
-###### Auth: OAuth 2.0 Bearer token
 
 | Name          | Type   | Description       |          |
 |---------------|--------|-------------------|----------|
@@ -72,7 +68,6 @@ $params = [
 
 $tweets->count()->recent($params);
 ```
-###### Auth: OAuth 2.0 Bearer token
 
 | Name    | Type  | Description      |          |
 |---------|-------|------------------|----------|
@@ -90,7 +85,6 @@ $params = [
 $tweets->count()->all($params);
 ```
 
-###### Auth: OAuth 2.0 Bearer token
 
 | Name    | Type  | Description      |          |
 |---------|-------|------------------|----------|
@@ -113,7 +107,6 @@ $params = [
 $tweets->search()->recent($params);
 ```
 
-###### Auth: OAuth 2.0 Bearer token
 
 | Name    | Type  | Description      |          |
 |---------|-------|------------------|----------|
@@ -131,7 +124,6 @@ $params = [
 $tweets->search()->all($params);
 ```
 
-###### Auth: OAuth 2.0 Bearer token
 
 | Name    | Type  | Description      |          |
 |---------|-------|------------------|----------|
@@ -145,7 +137,6 @@ Hide a reply to a tweet
 // note: you can't hide your own replies!!
 $tweets->reply()->hide($id);
 ```
-###### Auth: OAuth 1.0a User context
 
 | Name    | Type   | Description      |          |
 |---------|--------|------------------|----------|
@@ -159,7 +150,6 @@ unhide a reply to a tweeet
 $tweets->reply()->unhide($id);
 ```
 
-###### Auth: OAuth 1.0a User context
 | Name | Type   | Description  |          |
 |------|--------|--------------|----------|
 | $id  | String | The Tweet id | required |
@@ -172,7 +162,6 @@ Get the users who have liked a given tweet
 $tweets->likers($tweet_id, $params);
 ```
 
-###### Auth: OAuth 2.0 Bearer token
 
 | Name    | Type   | Description      |          |
 |---------|--------|------------------|----------|
@@ -187,7 +176,6 @@ Get the users who have liked a given tweet
 $tweets->retweeters($tweet_id, $params);
 ```
 
-###### Auth: OAuth 2.0 Bearer token
 
 | Name    | Type   | Description      |          |
 |---------|--------|------------------|----------|

@@ -1,7 +1,7 @@
 ---
 title: Compliance
 description: ''
-position: 6
+position: 7
 ---
 
 #### Method:  ```compliance()```
@@ -22,7 +22,6 @@ Create a new compliance job
 ```php
 $compliance->createJob($type = 'tweets', $name = 'test', $resumable = false);
 ```
-###### Auth: OAuth 2.0 Bearer token
 
  | Argument | Type    | Description                                                                             |          |
  |----------|---------|-----------------------------------------------------------------------------------------|----------|
@@ -40,7 +39,6 @@ Get a single compliance job with a specified ID
 $compliance->getJob($job_id);
 ```
 
-###### Auth: OAuth 2.0 Bearer token
 
  | Argument  | Type   | Description                      |          |
  |-----------|--------|----------------------------------|----------|
@@ -56,7 +54,6 @@ Get a list of compliance jobs of a given type
 $compliance->getJobs($type);
 ```
 
-###### Auth: OAuth 2.0 Bearer token
 
  | Argument | Type   | Description                        |          |
  |----------|--------|------------------------------------|----------|

@@ -1,7 +1,7 @@
 ---
 title: Lists
 description: ''
-position: 3
+position: 4
 ---
 #### Method:  ```lists()```
 
@@ -23,7 +23,6 @@ Gets a Twitter list.
 ```php
 $lists->get($list_id, $params);
 ```
-###### Auth: OAuth 2.0 Bearer token
 
 | Argument | Type  | Description  |          |
 |----------|-------|------------------------------------------------------------------------------------|----------|
@@ -39,7 +38,6 @@ Create a new list on behalf of the authenticated user
 $lists->create($list_name = 'Cool List', $list_description = 'testing', $private = false);
 ```
 
-###### Auth: OAuth 1.0a User context
 
  | Argument         | Type   | Description                                             |          |
  |------------------|--------|---------------------------------------------------------|----------|
@@ -56,7 +54,6 @@ Update an existing list on behalf of the authenticated user
 $lists->update($list_id, $list_name, $list_description, $private);
 ```
 
-###### Auth: OAuth 1.0a User context
 
  | Argument          | Type   | Description                                       |          |
  |-------------------|--------|---------------------------------------------------|----------|
@@ -75,7 +72,6 @@ Delete a list owned by the authenticated user
 $lists()->delete($list_id);
 ```
 
-###### Auth: OAuth 1.0a User context
 
  | Argument          | Type   | Description                                       |          |
  |-------------------|--------|---------------------------------------------------|----------|
@@ -95,7 +91,6 @@ Gets the members of a given list
 ```php
 $members()->lookup($list_id, $params);
 ```
-###### Auth: OAuth 2.0 Bearer token
  | Argument   | Type   | Description                                    |          |
  |------------|--------|------------------------------------------------|----------|
  | $list_id   | string | The id of the list                             | required |
@@ -110,7 +105,6 @@ Add a member to a list
 ```php
 $members->add($list_id, $user_name);
 ```
-###### Auth: OAuth 1.0a User context
  | Argument | Type   | Description        |          |
  |----------|--------|--------------------|----------|
  | $list_id | string | The id of the list | required |
@@ -125,7 +119,6 @@ Remove a member from a list
 $members->remove($list_id, $user_name);
 ```
 
-###### Auth: OAuth 1.0a User context
  | Argument   | Type   | Description                               |          |
  |------------|--------|-------------------------------------------|----------|
  | $list_id   | string | The id of the list                        | required |
@@ -145,7 +138,6 @@ Gets the followers of a given list
 ```php
 $follows->lookup($list_id, $params);
 ```
-###### Auth: OAuth 2.0 Bearer token
  | Argument | Type   | Description                                    |          |
  |----------|--------|------------------------------------------------|----------|
  | $list_id | string | The id of the list                             | required |
@@ -167,7 +159,6 @@ Retrieves Tweets from a specified List
 ```php
 $tweets->lookup($list_id, $params);
 ```
-###### Auth: OAuth 2.0 Bearer token
  | Argument | Type   | Description                                    |          |
  |----------|--------|------------------------------------------------|----------|
  | $list_id | string | The id of the list                             | required |
@@ -175,4 +166,3 @@ $tweets->lookup($list_id, $params);
 
 ## Reference
 - [Twitter API Lists Reference](https://developer.twitter.com/en/docs/twitter-api/lists/manage-lists/api-reference)
-
