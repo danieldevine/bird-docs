@@ -23,12 +23,16 @@ $media = $dms->upload('./img/dth.jpg');
 
 $text = 'Hi Dan, Bird Elephant has improved my life immeasurably. My interpersonal relationships are more fulfilling, my boss has given me a raise and my hair is thickening. I cannot wait to sponsor your project for a large sum of money.';
 
-$dm = (new \Coderjerk\BirdElephant\Compose\DirectMessage)->text($text)
+$message = (new \Coderjerk\BirdElephant\Compose\DirectMessage)->text($text)
     ->attachments($media->media_id_string);
 
-$dms->message($dm)->sendTo('coderjerk');
+$dm = $dms->message($message)->sendTo('coderjerk');
+
+$conversation_id = $dm->data->dm_conversation_id;
 
 ```
+
+`$dm` in this example will return a `data` object which contains `dm_conversation_id` and `dm_event_id`. You might want to store the conversation id to keep the conversation going using the `addToConversation()` method below, for example.
 
 ### Start a new group conversation with named participants.
 
@@ -40,7 +44,7 @@ With an attachment in this example.
 
     $media = $dms->upload('./img/chris.png');
 
-    $text = 'Hello To all of My Dear Friends';
+    $text = 'Hello To all of My Dear Friends, I solemnly pledge not to use this functionality for crypto spamming';
 
     $message = (new \Coderjerk\BirdElephant\Compose\DirectMessage)->text($text)->attachments($media->media_id_string);
 
@@ -53,3 +57,25 @@ With an attachment in this example.
     $dms->message($message)->newConversation($participants);
 
 ```
+
+### Add a message to an existing conversation.
+use a conversation id to add further messages.
+
+```php
+$text = 'While I respect your opinion, Bata Ilic is a far greater artist than Stefan Mross and anyone who believes otherwise needs to get their ears drained.';
+$dm = (new \Coderjerk\BirdElephant\Compose\DirectMessage)->text($text);
+$dms->message($dm)->addtoConversation($conversation_id);
+```
+### Retrieve an existing dm conversation by id
+```php
+$dms = $twitter->directMessages()->conversations()->find($conversation_id);
+```
+### Retrieve dm conversations with a named user
+
+```php
+ $dms = $twitter->directMessages()->conversations()->with('spanish__eddie');
+ ```
+### Retrieve all dm conversation events for the authenticated user
+```php
+ $dms = $twitter->directMessages()->conversations()->events();
+ ```
